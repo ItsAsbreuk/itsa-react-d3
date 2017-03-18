@@ -1,17 +1,32 @@
 {
-  "name": "react-d3",
-  "version": "0.4.0",
-  "description": "ReactJS charts using d3",
-  "author": "Eric S. Bullington",
-  "homepage": "https://reactiva.github.io/react-d3-website/",
-  "keywords": [
-    "d3",
-    "react",
-    "charts",
-    "ReactJS",
-    "react-component"
+  "name": "itsa-react-d3",
+  "version": "0.0.1",
+  "description": "ReactJS charts using d3, based upon react-d3",
+  "author": [
+      {
+          "name": "Marco Asbreuk",
+          "email": "marco@itsasbreuk.nl"
+      }
   ],
-  "license": "MIT",
+  "repository": {
+      "type": "git",
+      "url": "https://github.com/ItsAsbreuk/itsa-react-dialog"
+  },
+  "bugs": {
+      "url": "https://github.com/ItsAsbreuk/itsa-react-dialog/issues"
+  },
+  "keywords": [
+      "itsasbreuk",
+      "itsa",
+      "react",
+      "react-component",
+      "d3",
+      "react",
+      "charts",
+      "ReactJS",
+      "react-component"
+  ],
+  "license": "BSD-3-Clause",
   "main": "src/index.js",
   "devDependencies": {
     "babelify": "^6.1.3",
