@@ -2,7 +2,7 @@
 
 var React = require('react');
 var d3 = require('d3');
-var BarContainer = require('./BarContainer');
+var BarContainer = require('./BarContainer.jsx');
 
 module.exports = React.createClass({
 

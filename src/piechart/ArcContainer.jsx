@@ -2,7 +2,7 @@
 
 var React = require('react');
 var shade = require('../utils').shade;
-var Arc = require('./Arc');
+var Arc = require('./Arc.jsx');
 
 module.exports = React.createClass({
 
@@ -23,9 +23,9 @@ module.exports = React.createClass({
   render() {
 
     var props = this.props;
-    
+
     return (
-      <Arc 
+      <Arc
         {...this.props}
         fill={this.state.fill}
         handleMouseOver={props.hoverAnimation ? this._animateArc : null}

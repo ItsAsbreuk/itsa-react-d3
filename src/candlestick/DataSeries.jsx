@@ -3,7 +3,7 @@
 var React = require('react');
 var d3 = require('d3');
 var utils = require('../utils');
-var CandlestickContainer = require('./CandlestickContainer');
+var CandlestickContainer = require('./CandlestickContainer.jsx');
 
 
 module.exports = React.createClass({

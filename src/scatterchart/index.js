@@ -1,2 +1,2 @@
 
-exports.ScatterChart = require('./ScatterChart');
+exports.ScatterChart = require('./ScatterChart.jsx');

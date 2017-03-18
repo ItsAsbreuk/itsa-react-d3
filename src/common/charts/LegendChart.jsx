@@ -1,7 +1,7 @@
 'use strict';
 
 var React = require('react');
-var Legend = require('../Legend');
+var Legend = require('../Legend.jsx');
 var d3 = require('d3');
 
 module.exports = React.createClass({

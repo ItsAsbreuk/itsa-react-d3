@@ -1,2 +1,2 @@
 
-exports.Treemap = require('./Treemap');
+exports.Treemap = require('./Treemap.jsx');

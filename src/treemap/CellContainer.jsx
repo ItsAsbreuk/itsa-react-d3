@@ -2,7 +2,7 @@
 
 var React = require('react');
 var shade = require('../utils').shade;
-var Cell = require('./Cell');
+var Cell = require('./Cell.jsx');
 
 
 module.exports = React.createClass({
@@ -27,7 +27,7 @@ module.exports = React.createClass({
     var props = this.props;
 
     return (
-      <Cell 
+      <Cell
         {...props}
         fill={this.state.fill}
         handleMouseOver={props.hoverAnimation ? this._animateCell : null}

@@ -3,7 +3,7 @@
 var d3 = require('d3');
 var React = require('react');
 var Chart = require('../common').Chart;
-var DataSeries = require('./DataSeries');
+var DataSeries = require('./DataSeries.jsx');
 
 module.exports = React.createClass({
 

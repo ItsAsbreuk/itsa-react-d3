@@ -2,7 +2,7 @@
 
 var React = require('react');
 var d3 = require('d3');
-var ArcContainer = require('./ArcContainer');
+var ArcContainer = require('./ArcContainer.jsx');
 
 
 module.exports = React.createClass({

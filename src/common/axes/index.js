@@ -1,3 +1,3 @@
 
-exports.XAxis = require('./XAxis');
-exports.YAxis = require('./YAxis');
+exports.XAxis = require('./XAxis.jsx');
+exports.YAxis = require('./YAxis.jsx');

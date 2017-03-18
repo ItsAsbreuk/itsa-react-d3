@@ -1,2 +1,2 @@
 
-exports.PieChart = require('./PieChart');
+exports.PieChart = require('./PieChart.jsx');

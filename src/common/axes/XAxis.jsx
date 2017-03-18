@@ -2,9 +2,9 @@
 
 var React = require('react');
 var d3 = require('d3');
-var AxisTicks = require('./AxisTicks');
-var AxisLine = require('./AxisLine');
-var Label = require('./Label');
+var AxisTicks = require('./AxisTicks.jsx');
+var AxisLine = require('./AxisLine.jsx');
+var Label = require('./Label.jsx');
 
 module.exports = React.createClass({
 

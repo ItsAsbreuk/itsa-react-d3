@@ -1,2 +1,2 @@
 
-exports.LineChart = require('./LineChart');
+exports.LineChart = require('./LineChart.jsx');

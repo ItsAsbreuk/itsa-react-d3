@@ -2,7 +2,7 @@
 
 var React = require('react');
 var d3 = require('d3');
-var DataSeries = require('./DataSeries');
+var DataSeries = require('./DataSeries.jsx');
 var utils = require('../utils');
 
 var { Chart, XAxis, YAxis, Tooltip } = require('../common');
@@ -46,7 +46,7 @@ module.exports = React.createClass({
   },
 
   _getStackedValuesMaxY(_data) {
-    // in stacked bar chart, the maximum height we need for 
+    // in stacked bar chart, the maximum height we need for
     // yScale domain is the sum of y0 + y
     var { valuesAccessor } = this.props;
     return d3.max(_data, function(d) {
@@ -141,7 +141,7 @@ module.exports = React.createClass({
               xAxisClassName={props.xAxisClassName}
               xAxisTickValues={props.xAxisTickValues}
               xAxisLabel={props.xAxisLabel}
-              xAxisLabelOffset={props.xAxisLabelOffset} 
+              xAxisLabelOffset={props.xAxisLabelOffset}
               xScale={xScale}
               margins={svgMargins}
               tickFormatting={props.xAxisFormatter}

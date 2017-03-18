@@ -3,7 +3,7 @@
 var React = require('react');
 var d3 = require('d3');
 var utils = require('../utils');
-var DataSeries = require('./DataSeries');
+var DataSeries = require('./DataSeries.jsx');
 var { Chart, XAxis, YAxis } = require('../common');
 var { ViewBoxMixin, CartesianChartPropsMixin } = require('../mixins');
 

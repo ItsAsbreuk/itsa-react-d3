@@ -1,2 +1,2 @@
 
-exports.BarChart = require('./BarChart');
+exports.BarChart = require('./BarChart.jsx');

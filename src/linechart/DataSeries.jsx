@@ -2,8 +2,8 @@
 
 var React = require('react');
 var d3 = require('d3');
-var VoronoiCircleContainer = require('./VoronoiCircleContainer');
-var Line = require('./Line');
+var VoronoiCircleContainer = require('./VoronoiCircleContainer.jsx');
+var Line = require('./Line.jsx');
 
 module.exports = React.createClass({
 
@@ -28,7 +28,7 @@ module.exports = React.createClass({
       hoverAnimation: false
     };
   },
-  
+
   _isDate(d, accessor) {
       return Object.prototype.toString.call(accessor(d)) === '[object Date]';
   },
@@ -39,7 +39,7 @@ module.exports = React.createClass({
     var yScale = props.yScale;
     var xAccessor = props.xAccessor,
         yAccessor = props.yAccessor;
-    
+
     var interpolatePath = d3.svg.line()
         .y( (d) => props.yScale(yAccessor(d)) )
         .interpolate(props.interpolationType);
@@ -56,7 +56,7 @@ module.exports = React.createClass({
 
     var lines = props.data.map((series, idx) => {
       return (
-        <Line 
+        <Line
           path={interpolatePath(series.values)}
           stroke={props.colors(props.colorAccessor(series, idx))}
           strokeWidth={series.strokeWidth}
@@ -86,14 +86,14 @@ module.exports = React.createClass({
         cy = props.yScale(yAccessor(point));
       }
       circleFill = props.colors(props.colorAccessor(vnode, vnode.point.seriesIndex));
-      
+
       return (
-          <VoronoiCircleContainer 
-              key={idx} 
+          <VoronoiCircleContainer
+              key={idx}
               circleFill={circleFill}
               vnode={vnode}
               hoverAnimation={props.hoverAnimation}
-              cx={cx} cy={cy} 
+              cx={cx} cy={cy}
               circleRadius={props.circleRadius}
               onMouseOver={props.onMouseOver}
               dataPoint={{xValue: xAccessor(point), yValue: yAccessor(point), seriesName: vnode.point.series.name}}

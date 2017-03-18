@@ -1,2 +1,2 @@
 
-exports.AreaChart = require('./AreaChart');
+exports.AreaChart = require('./AreaChart.jsx');

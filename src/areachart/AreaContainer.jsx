@@ -3,14 +3,14 @@
 var React = require('react');
 var d3 = require('d3');
 var shade = require('../utils').shade;
-var Area = require('./Area');
+var Area = require('./Area.jsx');
 
 module.exports = React.createClass({
 
   displayName: 'AreaContainer',
 
   propTypes: {
-    fill: React.PropTypes.string, 
+    fill: React.PropTypes.string,
   },
 
   getDefaultProps() {
@@ -20,7 +20,7 @@ module.exports = React.createClass({
   },
 
   getInitialState() {
-    return { 
+    return {
       fill: this.props.fill
     };
   },
@@ -49,13 +49,13 @@ module.exports = React.createClass({
   },
 
   _animateArea() {
-    this.setState({ 
+    this.setState({
       fill: shade(this.props.fill, 0.02)
     });
   },
 
   _restoreArea() {
-    this.setState({ 
+    this.setState({
       fill: this.props.fill
     });
   },

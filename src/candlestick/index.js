@@ -1,2 +1,2 @@
 
-exports.CandlestickChart = require('./CandlestickChart');
+exports.CandlestickChart = require('./CandlestickChart.jsx');

@@ -1,8 +1,8 @@
 'use strict';
 
 var React = require('react');
-var LegendChart = require('./LegendChart');
-var BasicChart = require('./BasicChart');
+var LegendChart = require('./LegendChart.jsx');
+var BasicChart = require('./BasicChart.jsx');
 
 module.exports = React.createClass({
 
@@ -39,7 +39,7 @@ module.exports = React.createClass({
       );
     }
     return (
-      <BasicChart 
+      <BasicChart
         svgClassName={props.svgClassName}
         titleClassName={props.titleClassName}
         {...this.props}

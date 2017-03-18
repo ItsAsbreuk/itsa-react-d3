@@ -2,7 +2,7 @@
 
 var React = require('react');
 var d3 = require('d3');
-var CellContainer = require('./CellContainer');
+var CellContainer = require('./CellContainer.jsx');
 
 
 module.exports = React.createClass({

@@ -3,14 +3,14 @@
 var React = require('react');
 var d3 = require('d3');
 var shade = require('../utils').shade;
-var VoronoiCircle = require('./VoronoiCircle');
+var VoronoiCircle = require('./VoronoiCircle.jsx');
 
 module.exports = React.createClass({
 
   displayName: 'VornoiCircleContainer',
 
   getDefaultProps() {
-    return { 
+    return {
       circleRadius: 3,
       circleFill: '#1f77b4',
       hoverAnimation: true
@@ -18,7 +18,7 @@ module.exports = React.createClass({
   },
 
   getInitialState() {
-    return { 
+    return {
       circleRadius: this.props.circleRadius,
       circleFill: this.props.circleFill
     };
@@ -55,14 +55,14 @@ module.exports = React.createClass({
   _animateCircle() {
     var rect = this.getDOMNode().getElementsByTagName("circle")[0].getBoundingClientRect();
     this.props.onMouseOver.call(this, rect.right, rect.top, this.props.dataPoint )
-    this.setState({ 
+    this.setState({
       circleRadius: this.props.circleRadius * ( 5 / 4 ),
       circleFill: shade(this.props.circleFill, 0.2)
     });
   },
 
   _restoreCircle() {
-    this.setState({ 
+    this.setState({
       circleRadius: this.props.circleRadius,
       circleFill: this.props.circleFill
     });
@@ -70,8 +70,8 @@ module.exports = React.createClass({
 
   _drawPath: function(d) {
     if(d === undefined) {
-      return; 
-    }  
+      return;
+    }
     return 'M' + d.join(',') + 'Z';
   },
 });

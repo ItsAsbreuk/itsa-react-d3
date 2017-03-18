@@ -2,7 +2,7 @@
 
 var React = require('react');
 var d3 = require('d3');
-var VoronoiCircleContainer = require('./VoronoiCircleContainer');
+var VoronoiCircleContainer = require('./VoronoiCircleContainer.jsx');
 
 module.exports = React.createClass({
 

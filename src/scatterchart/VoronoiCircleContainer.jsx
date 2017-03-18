@@ -3,7 +3,7 @@
 var React = require('react');
 var d3 = require('d3');
 var shade = require('../utils').shade;
-var VoronoiCircle = require('./VoronoiCircle');
+var VoronoiCircle = require('./VoronoiCircle.jsx');
 
 module.exports = React.createClass({
 

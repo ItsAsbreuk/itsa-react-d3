@@ -1,5 +1,5 @@
 
-exports.CartesianChartPropsMixin = require('./CartesianChartPropsMixin');
-exports.DefaultAccessorsMixin = require('./DefaultAccessorsMixin');
-exports.ViewBoxMixin = require('./ViewBoxMixin');
-exports.TooltipMixin = require('./TooltipMixin');
+exports.CartesianChartPropsMixin = require('./CartesianChartPropsMixin.jsx');
+exports.DefaultAccessorsMixin = require('./DefaultAccessorsMixin.jsx');
+exports.ViewBoxMixin = require('./ViewBoxMixin.jsx');
+exports.TooltipMixin = require('./TooltipMixin.jsx');

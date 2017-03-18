@@ -3,8 +3,8 @@
 var React = require('react');
 var d3 = require('d3');
 var utils = require('../utils');
-var Candle = require('./Candle');
-var Wick = require('./Wick');
+var Candle = require('./Candle.jsx');
+var Wick = require('./Wick.jsx');
 
 module.exports = React.createClass({
 
@@ -73,14 +73,14 @@ module.exports = React.createClass({
   },
 
   _animateCandle() {
-    this.setState({ 
+    this.setState({
       candleWidth: this.props.candleWidth * 1.5,
       candleFill: utils.shade(this.props.candleFill, -0.2)
     });
   },
 
   _restoreCandle() {
-    this.setState({ 
+    this.setState({
       candleWidth: this.props.candleWidth,
       candleFill: this.props.candleFill
     });
