@@ -38,8 +38,8 @@ module.exports = React.createClass({
       margins:                {top: 10, right: 20, bottom: 40, left: 45},
       rangeRoundBandsPadding: 0.25,
       stackOffset:            'zero',
-      valuesAccessor:         d => d.values,
       xAxisStrokeWidth:       1,
+      valuesAccessor:         d => d.values,
       xAxisClassName:         'rd3-barchart-xaxis',
       yAxisClassName:         'rd3-barchart-yaxis',
       yAxisTickCount:         4,
@@ -133,11 +133,10 @@ module.exports = React.createClass({
               horizontalChart={props.horizontal}
               xOrient={props.xOrient}
               yOrient={yOrient}
-              gridHorizontal={false}
+              strokeWidth="0"
+              gridHorizontal={props.gridHorizontal}
               gridHorizontalStroke={props.gridHorizontalStroke}
-              gridHorizontalStrokeWidth={0}
-              strokeWidth={0}
-              gridVertical={false}
+              gridHorizontalStrokeWidth={props.gridHorizontalStrokeWidth}
               gridHorizontalStrokeDash={props.gridHorizontalStrokeDash}
             />
             <XAxis
