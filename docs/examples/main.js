@@ -92,7 +92,7 @@ var Demos = React.createClass({
         ]
       }
     ];
-
+var a = '[{"name":"finished","values":[{"x":"site identification","y":0},{"x":"site identification - email","y":0},{"x":"site identification - voicemail","y":0},{"x":"site identification - call back","y":0},{"x":"site identification - non-working","y":0},{"x":"site identification - call complete","y":2},{"x":"CDA","y":0},{"x":"overview","y":1},{"x":"feasibility questionnaire","y":0},{"x":"CV\'s","y":0},{"x":"pre-study site visit","y":0},{"x":"selected","y":0},{"x":"CTA","y":0},{"x":"regulatory documents","y":0},{"x":"IRB","y":0},{"x":"IM","y":0},{"x":"EDC","y":0},{"x":"IVRS","y":0},{"x":"drug shipment","y":0},{"x":"site-initiation visit","y":0},{"x":"enrollment","y":1}]},{"name":"in progress","values":[{"x":"site identification","y":0},{"x":"site identification - email","y":0},{"x":"site identification - voicemail","y":0},{"x":"site identification - call back","y":0},{"x":"site identification - non-working","y":0},{"x":"site identification - call complete","y":2},{"x":"CDA","y":0},{"x":"overview","y":1},{"x":"feasibility questionnaire","y":0},{"x":"CV\'s","y":0},{"x":"pre-study site visit","y":0},{"x":"selected","y":0},{"x":"CTA","y":0},{"x":"regulatory documents","y":0},{"x":"IRB","y":0},{"x":"IM","y":0},{"x":"EDC","y":0},{"x":"IVRS","y":0},{"x":"drug shipment","y":0},{"x":"site-initiation visit","y":0},{"x":"enrollment","y":1}]},{"name":"not there yet","values":[{"x":"site identification","y":0},{"x":"site identification - email","y":0},{"x":"site identification - voicemail","y":0},{"x":"site identification - call back","y":0},{"x":"site identification - non-working","y":0},{"x":"site identification - call complete","y":2},{"x":"CDA","y":0},{"x":"overview","y":1},{"x":"feasibility questionnaire","y":0},{"x":"CV\'s","y":0},{"x":"pre-study site visit","y":0},{"x":"selected","y":0},{"x":"CTA","y":0},{"x":"regulatory documents","y":0},{"x":"IRB","y":0},{"x":"IM","y":0},{"x":"EDC","y":0},{"x":"IVRS","y":0},{"x":"drug shipment","y":0},{"x":"site-initiation visit","y":0},{"x":"enrollment","y":1}]}]';
     var verticalBarData = [
       {
         "name": "Series A",
@@ -122,6 +122,8 @@ var Demos = React.createClass({
         ]
       }
     ];
+
+    verticalBarData = JSON.parse(a);
 
     var pieData = [{label: "Margarita", value: 20.0}, {label: "John", value: 55.0}, {label: "Tim", value: 25.0 }];
 
@@ -420,8 +422,7 @@ var Demos = React.createClass({
         <div className="row">
           <div className="col-md-6">
             <VertBarChart data={verticalBarData} width={500} height={300} title="Vertical Bar Chart" yAxisLabel="Label" xAxisLabel="Value"
-                    showInnerLabels={true}
-                    showOuterLabels={true} />
+                    showValues={true} />
           </div>
           <div className="col-md-6">
             <pre ref='block'>

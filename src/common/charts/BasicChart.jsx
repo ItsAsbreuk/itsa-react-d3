@@ -50,6 +50,7 @@ module.exports = React.createClass({
         height={props.height}
         viewBox={props.viewBox}
         width={props.width}
+        style={props.style}
       >
         {props.children}
       </svg>

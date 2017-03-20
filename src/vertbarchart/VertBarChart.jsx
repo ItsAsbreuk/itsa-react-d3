@@ -29,6 +29,8 @@ module.exports = React.createClass({
     xAxisClassName:         React.PropTypes.string,
     yAxisClassName:         React.PropTypes.string,
     yAxisTickCount:         React.PropTypes.number,
+    showValues:             React.PropTypes.bool,
+    valueTextFill:          React.PropTypes.string
   },
 
   getDefaultProps() {
@@ -40,6 +42,7 @@ module.exports = React.createClass({
       stackOffset:            'zero',
       xAxisStrokeWidth:       1,
       valuesAccessor:         d => d.values,
+      valueTextFormatter:     val => val,
       xAxisClassName:         'rd3-barchart-xaxis',
       yAxisClassName:         'rd3-barchart-yaxis',
       yAxisTickCount:         4,
@@ -71,7 +74,7 @@ module.exports = React.createClass({
   _getLabels(firstSeries) {
     // we only need first series to get all the labels
     var { valuesAccessor, xAccessor } = this.props;
-    return valuesAccessor(firstSeries).map(xAccessor);
+    return valuesAccessor(firstSeries).map((val, i) => i);
   },
 
   _stack() {
@@ -85,6 +88,12 @@ module.exports = React.createClass({
                     .values(valuesAccessor);
   },
 
+  _getLabelsXaxis(firstSeries) {
+    // we only need first series to get all the labels
+    var { valuesAccessor, xAccessor } = this.props;
+    return valuesAccessor(firstSeries).map(xAccessor);
+  },
+
   render() {
 
     var props = this.props;
@@ -93,6 +102,14 @@ module.exports = React.createClass({
     var _data = this._stack()(props.data);
 
     var {innerHeight, innerWidth, trans, svgMargins} = this.getDimensions();
+
+    // var xScaleXaxis = d3.scale.linear()
+    //   .range([0, innerHeight])
+    //   .domain(0, _data.length-1);
+
+    var xScaleXaxis = d3.scale.ordinal()
+      .domain(this._getLabelsXaxis(_data[0]))
+      .rangeRoundBands([0, innerHeight], props.rangeRoundBandsPadding);
 
     var xScale = d3.scale.ordinal()
       .domain(this._getLabels(_data[0]))
@@ -115,6 +132,7 @@ module.exports = React.createClass({
           colorAccessor={props.colorAccessor}
           width={props.width}
           height={props.height}
+          style={{overflow: 'visible'}}
           title={props.title}
           shouldUpdate={!this.state.changeState}
         >
@@ -124,7 +142,7 @@ module.exports = React.createClass({
               yAxisTickValues={props.yAxisTickValues}
               yAxisLabel={props.yAxisLabel}
               yAxisLabelOffset={props.yAxisLabelOffset}
-              yScale={xScale}
+              yScale={xScaleXaxis}
               margins={svgMargins}
               yAxisTickCount={props.yAxisTickCount}
               tickFormatting={props.yAxisFormatter}
@@ -164,6 +182,9 @@ module.exports = React.createClass({
               xScale={xScale}
               margins={svgMargins}
               _data={_data}
+              valueTextFill={props.valueTextFill}
+              showValues={props.showValues}
+              valueTextFormatter={props.valueTextFormatter}
               series={series}
               width={innerWidth}
               height={innerHeight}

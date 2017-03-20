@@ -8,6 +8,11 @@ module.exports = React.createClass({
 
   propTypes: {
     fill: React.PropTypes.string,
+    serienr: React.PropTypes.number,
+    indexnr: React.PropTypes.number,
+    showValues:     React.PropTypes.bool,
+    valueTextFill:  React.PropTypes.string,
+    valueTextFormatter: React.PropTypes.func
   },
 
   getDefaultProps() {

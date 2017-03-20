@@ -16,6 +16,9 @@ module.exports = React.createClass({
     height:         React.PropTypes.number,
     width:          React.PropTypes.number,
     valuesAccessor: React.PropTypes.func,
+    showValues:     React.PropTypes.bool,
+    valueTextFill:  React.PropTypes.string,
+    valueTextFormatter: React.PropTypes.func
   },
 
   render() {
@@ -35,6 +38,7 @@ module.exports = React.createClass({
   _renderBarContainer(segment, seriesIdx, index) {
     console.warn('seriesIdx', seriesIdx);
     console.warn('segment', segment);
+    console.warn('index', index);
     console.warn('rangeRoundBandsPadding', this.props.rangeRoundBandsPadding);
     var { colors, colorAccessor, height, hoverAnimation, xScale, yScale, rangeRoundBandsPadding } = this.props;
     var barHeight = Math.abs(yScale(0) - yScale(segment.y));
@@ -49,13 +53,20 @@ module.exports = React.createClass({
         height={barWidth}
         // x={xScale(segment.x)}
         x={(segment.y >= 0) ? y : y - barHeight}
-        y={(index===0) ? Math.round(1.5*spaceBetween) : xScale(index+1)}
+        // y={(index===0) ? Math.round(1.5*spaceBetween) : xScale(index+1)}
+        y={xScale(index)}
         // y={Math.round( spaceBetween + (index * (barWidth+spaceBetween)  ))}
         // x={xScale(segment.x)}
         fill={colors(colorAccessor(segment, seriesIdx))}
         hoverAnimation={hoverAnimation}
         onMouseOver={this.props.onMouseOver}
         onMouseLeave={this.props.onMouseLeave}
+        showValues={this.props.showValues}
+        serienr={seriesIdx}
+        indexnr={index}
+        valueTextFormatter={this.props.valueTextFormatter}
+        valueTextFill={this.props.valueTextFill}
+        value={segment.y}
         dataPoint={{xValue: segment.x, yValue: segment.y, seriesName: this.props.series[seriesIdx]}}
       />
     )
