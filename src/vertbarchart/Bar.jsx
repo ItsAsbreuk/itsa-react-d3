@@ -59,7 +59,7 @@ module.exports = React.createClass({
           onMouseOver={this.props.handleMouseOver}
           onMouseLeave={this.props.handleMouseLeave}
         />
-        {this.props.showValues ? this.renderLabel() : null}
+        {(this.props.showValues && this.props.value) ? this.renderLabel() : null}
       </g>
     );
   }

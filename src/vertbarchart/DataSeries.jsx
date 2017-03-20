@@ -36,10 +36,6 @@ module.exports = React.createClass({
   },
 
   _renderBarContainer(segment, seriesIdx, index) {
-    console.warn('seriesIdx', seriesIdx);
-    console.warn('segment', segment);
-    console.warn('index', index);
-    console.warn('rangeRoundBandsPadding', this.props.rangeRoundBandsPadding);
     var { colors, colorAccessor, height, hoverAnimation, xScale, yScale, rangeRoundBandsPadding } = this.props;
     var barHeight = Math.abs(yScale(0) - yScale(segment.y));
     // var y = yScale( segment.y0 + segment.y );
